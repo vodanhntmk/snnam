@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chúc Mừng Sinh Nhật Nguyễn Bảo Nam!</title>
+  
+  <!-- Google Fonts: Baloo 2 (chữ hoạt hình năng động) & Comfortaa (bo tròn ngọt ngào) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800;900&family=Comfortaa:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            cartoon: ['"Baloo 2"', 'cursive'],
+            rounded: ['"Comfortaa"', 'cursive'],
+          },
+          colors: {
+            m3: {
+              primary: '#FF4D80',
+              primaryHover: '#E6346A',
+              primaryContainer: '#FFD9E2',
+              secondary: '#7A52FF',
+              secondaryContainer: '#E8DDFF',
+              tertiary: '#FFAE19',
+              tertiaryContainer: '#FFE9BE',
+              surface: '#FFF8F9',
+              surfaceVariant: '#FCEAEF',
+              accentMint: '#42D5A5',
+              mintContainer: '#CEF5E7',
+            }
+          },
+          borderRadius: {
+            '4xl': '2rem',
+            '5xl': '2.5rem',
+          },
+          boxShadow: {
+            'm3-tonal': '0 20px 40px -15px rgba(255, 77, 128, 0.22), 0 0 20px 0 rgba(122, 82, 255, 0.08)',
+            'm3-floating': '0 25px 50px -12px rgba(255, 77, 128, 0.35)',
+            'card-lift': '0 20px 35px -10px rgba(0,0,0,0.08), 0 0 1px 1px rgba(0,0,0,0.03)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Spring Easing Variables */
+    :root {
+      --spring-ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --elastic-bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+
+    body {
+      font-family: 'Baloo 2', cursive;
+      background: radial-gradient(circle at 15% 15%, #FFF0F5 0%, #F5F0FF 50%, #FFF9EB 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Spring animations */
+    .spring-hover {
+      transition: transform 0.45s var(--spring-ease), box-shadow 0.45s var(--spring-ease);
+    }
+    .spring-hover:hover {
+      transform: translateY(-6px) scale(1.03);
+    }
+    .spring-hover:active {
+      transform: translateY(2px) scale(0.96);
+    }
+
+    @keyframes boxWobble {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+      15% { transform: translateY(-12px) rotate(-4deg) scale(1.05); }
+      30% { transform: translateY(4px) rotate(4deg) scale(0.97); }
+      45% { transform: translateY(-8px) rotate(-2deg) scale(1.03); }
+      60% { transform: translateY(2px) rotate(2deg) scale(0.99); }
+      75% { transform: translateY(-3px) rotate(0deg) scale(1.01); }
+    }
+
+    .animate-box-wobble {
+      animation: boxWobble 2.6s infinite ease-in-out;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(6deg); }
+    }
+
+    .animate-float-slow {
+      animation: floatOrb 5s ease-in-out infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.08); }
+    }
+
+    .animate-pulse-glow {
+      animation: pulseGlow 3.5s ease-in-out infinite;
+    }
+
+    /* Staggered Spring Pop */
+    .spring-pop-in {
+      animation: springPop 0.8s var(--spring-ease) forwards;
+    }
+
+    @keyframes springPop {
+      0% {
+        opacity: 0;
+        transform: scale(0.4) translateY(60px);
+      }
+      70% {
+        transform: scale(1.08) translateY(-8px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    /* Letter bounce animation */
+    .bounce-char {
+      display: inline-block;
+      transition: transform 0.3s var(--spring-ease);
+    }
+    .bounce-char:hover {
+      transform: translateY(-12px) scale(1.2) rotate(6deg);
+      color: #FF4D80;
+    }
+
+    /* Custom Toast Notification */
+    #customToast {
+      transition: all 0.5s var(--spring-ease);
+    }
+
+    /* Video Frame Glow */
+    .video-glow-frame {
+      box-shadow: 0 25px 60px -15px rgba(255, 77, 128, 0.3), 0 0 0 6px rgba(255, 255, 255, 0.85);
+    }
+  </style>
+</head>
+<body class="relative flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+
+  <!-- Background Decorative Ambient Elements -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-pink-200/40 rounded-full blur-3xl animate-pulse-glow"></div>
+    <div class="absolute top-1/2 -right-24 w-80 h-80 bg-purple-200/40 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 1.5s;"></div>
+    <div class="absolute -bottom-24 left-1/3 w-96 h-96 bg-amber-200/40 rounded-full blur-3xl animate-pulse-glow" style="animation-delay: 2.5s;"></div>
+    
+    <!-- Floating Cartoon Emojis -->
+    <div class="absolute top-12 left-10 text-4xl animate-float-slow opacity-60">🌸</div>
+    <div class="absolute top-28 right-12 text-3xl animate-float-slow opacity-60" style="animation-delay: 1s;">✨</div>
+    <div class="absolute bottom-20 left-12 text-4xl animate-float-slow opacity-60" style="animation-delay: 2s;">🎈</div>
+    <div class="absolute bottom-24 right-16 text-3xl animate-float-slow opacity-60" style="animation-delay: 3s;">🎉</div>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-50 w-full h-full"></canvas>
+
+  <!-- Main Container -->
+  <main class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center justify-center min-h-[90vh]">
+    
+    <!-- ============================================== -->
+    <!-- STAGE 1: THE MYSTERY SURPRISE GIFT BOX -->
+    <!-- ============================================== -->
+    <section id="giftStage" class="w-full flex flex-col items-center text-center transition-all duration-700 ease-out py-6">
+      
+      <!-- Top Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-m3-surfaceVariant text-m3-primary border border-pink-200 shadow-sm mb-6 spring-hover">
+        <span class="animate-spin text-lg" style="animation-duration: 3s;">⭐</span>
+        <span class="font-rounded font-bold text-sm tracking-wide uppercase">Bí Mật Đặc Biệt</span>
+        <span>✨</span>
+      </div>
+
+      <!-- Main Heading on Gift Stage -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-gray-800 leading-tight mb-4 tracking-tight">
+        Gửi tặng <span class="bg-gradient-to-r from-m3-primary via-purple-600 to-m3-tertiary bg-clip-text text-transparent">Nguyễn Bảo Nam</span>
+      </h1>
+      
+      <p class="font-rounded text-base sm:text-lg text-gray-600 max-w-md mx-auto mb-8 px-4">
+        Có một món quà bất ngờ tràn ngập niềm vui đang đợi bạn mở ra! Chạm vào hộp quà ngay nào 👇
+      </p>
+
+      <!-- Animated 3D/Expressive Gift Box Container -->
+      <div id="giftBoxTrigger" class="group relative cursor-pointer my-4 p-6 transition-transform">
+        <div class="relative animate-box-wobble">
+          
+          <!-- Outer Glow ring -->
+          <div class="absolute -inset-4 bg-gradient-to-r from-pink-400 via-purple-400 to-amber-300 rounded-full blur-xl opacity-40 group-hover:opacity-75 transition duration-500"></div>
+
+          <!-- Expressive Gift Box Vector Graphic -->
+          <svg class="w-48 h-48 sm:w-56 sm:h-56 drop-shadow-2xl relative transition-transform duration-300 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Box Body -->
+            <rect x="35" y="75" width="130" height="100" rx="20" fill="url(#giftGradient)" />
+            <!-- Vertical Ribbon -->
+            <rect x="88" y="75" width="24" height="100" fill="#FFDA58" />
+            <!-- Horizontal Ribbon -->
+            <rect x="35" y="115" width="130" height="20" fill="#FFDA58" />
+            
+            <!-- Box Lid -->
+            <rect x="25" y="55" width="150" height="30" rx="14" fill="#FF3B76" />
+            <rect x="88" y="55" width="24" height="30" fill="#FFE17D" />
+
+            <!-- Bow Left -->
+            <path d="M100 58 C70 10, 30 30, 90 56 Z" fill="#FFE17D" stroke="#E5B217" stroke-width="2"/>
+            <!-- Bow Right -->
+            <path d="M100 58 C130 10, 170 30, 110 56 Z" fill="#FFE17D" stroke="#E5B217" stroke-width="2"/>
+            <!-- Bow Knot -->
+            <circle cx="100" cy="57" r="12" fill="#FFC933" />
+            
+            <!-- Sparkle dots -->
+            <circle cx="60" cy="100" r="3" fill="#ffffff" opacity="0.8"/>
+            <circle cx="140" cy="150" r="4" fill="#ffffff" opacity="0.8"/>
+
+            <!-- Gradients Definition -->
+            <defs>
+              <linearGradient id="giftGradient" x1="35" y1="75" x2="165" y2="175" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FF5B89" />
+                <stop offset="1" stop-color="#7C4DFF" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <!-- Floating Prompt Badge -->
+          <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md px-5 py-2 rounded-full border border-pink-200 shadow-md whitespace-nowrap text-xs sm:text-sm font-bold text-m3-primary flex items-center gap-1.5 animate-bounce">
+            <span>🎁</span> Nhấn để mở quà!
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <button id="openGiftBtn" class="mt-8 px-9 py-4 rounded-full bg-gradient-to-r from-m3-primary to-m3-secondary text-white font-bold text-lg sm:text-xl shadow-m3-tonal hover:shadow-m3-floating spring-hover flex items-center gap-3">
+        <span>Bật Mí Bất Ngờ</span>
+        <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </button>
+
+    </section>
+
+    <!-- ============================================== -->
+    <!-- STAGE 2: THE REVEAL & VIDEO EXPERIENCE -->
+    <!-- ============================================== -->
+    <section id="celebrationStage" class="w-full hidden flex-col items-center py-4">
+      
+      <!-- Animated Title with Staggered Characters -->
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-m3-mintContainer text-emerald-800 font-rounded font-bold text-sm mb-3 shadow-sm spring-hover">
+          <span>🌸</span> Xin chúc mừng <span>🌸</span>
+        </div>
+
+        <h1 id="animatedTitle" class="text-3xl sm:text-5xl md:text-6xl font-black text-gray-800 leading-tight">
+          Chúc Mừng Sinh Nhật Nam bl!
+        </h1>
+        <p class="font-rounded text-base sm:text-xl text-m3-primary font-bold mt-2">
+          ✨ Tuổi mới thêm nhiều niềm vui, may mắn & thành công rực rỡ! ✨
+        </p>
+      </div>
+
+      <!-- Expressive Sticker Cards (Staggered badges) -->
+      <div class="flex flex-wrap justify-center gap-3 mb-6 max-w-2xl px-2">
+        <span class="px-4 py-2 bg-pink-100 border border-pink-200 text-pink-700 rounded-3xl text-sm font-bold shadow-sm spring-hover cursor-default">
+          🎂 Thêm một tuổi mới thật ngầu
+        </span>
+        <span class="px-4 py-2 bg-purple-100 border border-purple-200 text-purple-700 rounded-3xl text-sm font-bold shadow-sm spring-hover cursor-default">
+          🎉 Luôn tràn ngập tiếng cười
+        </span>
+        <span class="px-4 py-2 bg-amber-100 border border-amber-200 text-amber-800 rounded-3xl text-sm font-bold shadow-sm spring-hover cursor-default">
+          🚀 Vạn sự như ý, tỷ sự như mơ
+        </span>
+        <span class="px-4 py-2 bg-emerald-100 border border-emerald-200 text-emerald-700 rounded-3xl text-sm font-bold shadow-sm spring-hover cursor-default">
+          ✨ Bạn bè gửi ngàn lời chúc
+        </span>
+      </div>
+
+      <!-- Video Player Card Container (Material 3 Expressive Container) -->
+      <div class="w-full max-w-3xl bg-white/90 backdrop-blur-xl rounded-4xl sm:rounded-5xl p-4 sm:p-7 shadow-m3-tonal border border-white/60 video-glow-frame relative overflow-hidden transition-all duration-500">
+        
+        <!-- Video Header info -->
+        <div class="flex items-center justify-between pb-3 px-2 border-b border-gray-100 mb-3">
+          <div class="flex items-center gap-3">
+            <span class="w-3.5 h-3.5 rounded-full bg-red-400 inline-block animate-ping"></span>
+            <span class="font-rounded font-bold text-gray-700 text-sm sm:text-base">Video Lời Chúc Đặc Biệt</span>
+          </div>
+          <span class="text-xs font-rounded bg-m3-tertiaryContainer text-amber-800 px-3 py-1 rounded-full font-bold">
+            4K
+          </span>
+        </div>
+
+        <!-- Video Element wrapper -->
+        <div class="relative w-full aspect-video rounded-3xl overflow-hidden bg-black shadow-inner flex items-center justify-center group">
+          <video 
+            id="bdayVideo" 
+            class="w-full h-full object-cover rounded-3xl"
+            playsinline 
+            controls
+            preload="metadata">
+            <source src="./video.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+          </video>
+        </div>
+
+        <!-- Interactive Control Bar below video (Đã bỏ nút đổi video) -->
+        <div class="flex flex-wrap items-center justify-center sm:justify-between gap-3 mt-5 pt-3">
+          
+          <div class="flex items-center gap-2">
+            <!-- Confetti blast button -->
+            <button id="blastConfettiBtn" class="px-5 py-2.5 rounded-full bg-m3-surfaceVariant text-m3-primary font-bold text-sm border border-pink-200 spring-hover flex items-center gap-2">
+              <span>🎆</span> Bắn pháo hoa nữa!
+            </button>
+            
+            <!-- Play Audio Melodic Chime -->
+            <button id="playMelodyBtn" class="px-5 py-2.5 rounded-full bg-m3-secondaryContainer text-m3-secondary font-bold text-sm border border-purple-200 spring-hover flex items-center gap-2">
+              <span>🎵</span> Nhạc chúc mừng
+            </button>
+          </div>
+
+          <div>
+            <!-- Reset Button -->
+            <button id="replayStageBtn" class="px-5 py-2.5 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold text-sm spring-hover flex items-center gap-2">
+              <span>🔄</span> Xem lại từ đầu
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Sweet Footer Note -->
+      <footer class="mt-8 text-center text-gray-500 font-rounded text-sm space-y-1.5">
+        <p>Thực hiện với rất nhiều tình cảm dành riêng cho <span class="font-bold text-m3-primary">Nguyễn Bảo Nam</span> 💖</p>
+        <p class="text-xs sm:text-sm text-gray-400 font-medium tracking-wide">Web này không dùng AI code mà dùng bằng cả tấm lòng của tôi</p>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- In-App Notification Toast -->
+  <div id="customToast" class="fixed bottom-6 z-50 transform translate-y-32 opacity-0 pointer-events-none px-6 py-3 rounded-full bg-gray-900/90 text-white font-rounded text-sm font-bold shadow-2xl flex items-center gap-2 backdrop-blur-md">
+    <span id="toastIcon">✨</span>
+    <span id="toastMessage">Thông báo</span>
+  </div>
+
+  <!-- Javascript Logic -->
+  <script>
+    /* ==========================================================
+       1. WEB AUDIO API SYNTHESIZER
+       ========================================================== */
+    class BirthdayAudioSynth {
+      constructor() {
+        this.ctx = null;
+      }
+
+      init() {
+        if (!this.ctx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          this.ctx = new AudioContext();
+        }
+        if (this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+      }
+
+      playSpringBoing() {
+        try {
+          this.init();
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          
+          osc.type = 'triangle';
+          const now = this.ctx.currentTime;
+          
+          osc.frequency.setValueAtTime(150, now);
+          osc.frequency.exponentialRampToValueAtTime(600, now + 0.15);
+          osc.frequency.exponentialRampToValueAtTime(320, now + 0.35);
+
+          gain.gain.setValueAtTime(0.4, now);
+          gain.gain.exponentialRampToValueAtTime(0.01, now + 0.4);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+
+          osc.start(now);
+          osc.stop(now + 0.4);
+        } catch (e) {
+          console.warn('Audio error:', e);
+        }
+      }
+
+      playPop() {
+        try {
+          this.init();
+          const osc = this.ctx.createOscillator();
+          const gain = this.ctx.createGain();
+          const now = this.ctx.currentTime;
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(400 + Math.random() * 300, now);
+          osc.frequency.exponentialRampToValueAtTime(80, now + 0.1);
+
+          gain.gain.setValueAtTime(0.3, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+
+          osc.connect(gain);
+          gain.connect(this.ctx.destination);
+
+          osc.start(now);
+          osc.stop(now + 0.1);
+        } catch (e) {
+          console.warn(e);
+        }
+      }
+
+      playFanfare() {
+        try {
+          this.init();
+          const notes = [
+            { freq: 261.63, dur: 0.25 }, // C4
+            { freq: 261.63, dur: 0.25 }, // C4
+            { freq: 293.66, dur: 0.5 },  // D4
+            { freq: 261.63, dur: 0.5 },  // C4
+            { freq: 349.23, dur: 0.5 },  // F4
+            { freq: 329.63, dur: 0.9 },  // E4
+          ];
+
+          let start = this.ctx.currentTime;
+          notes.forEach((n) => {
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(n.freq, start);
+
+            gain.gain.setValueAtTime(0.35, start);
+            gain.gain.exponentialRampToValueAtTime(0.001, start + n.dur);
+
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+
+            osc.start(start);
+            osc.stop(start + n.dur);
+
+            start += n.dur * 0.85;
+          });
+        } catch (e) {
+          console.warn(e);
+        }
+      }
+    }
+
+    const sound = new BirthdayAudioSynth();
+
+    /* ==========================================================
+       2. CANVAS CONFETTI ENGINE
+       ========================================================== */
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let animationFrameId = null;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const CONFETTI_COLORS = ['#FF4D80', '#7A52FF', '#FFAE19', '#42D5A5', '#38BDF8', '#FF6B6B', '#F43F5E'];
+
+    class ConfettiPiece {
+      constructor(x, y) {
+        this.x = x ?? canvas.width / 2;
+        this.y = y ?? canvas.height / 2;
+        this.color = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
+        this.radius = Math.random() * 6 + 4;
+        this.size = Math.random() * 12 + 6;
+        
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = Math.random() * 16 + 6;
+        this.vx = Math.cos(angle) * velocity;
+        this.vy = Math.sin(angle) * velocity - 4;
+        
+        this.gravity = 0.35;
+        this.drag = 0.96;
+        this.rotation = Math.random() * 360;
+        this.rotationSpeed = (Math.random() - 0.5) * 12;
+        this.opacity = 1;
+        this.decay = Math.random() * 0.015 + 0.008;
+        this.type = Math.random() > 0.4 ? 'rect' : 'circle';
+      }
+
+      update() {
+        this.vx *= this.drag;
+        this.vy *= this.drag;
+        this.vy += this.gravity;
+        
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        this.rotation += this.rotationSpeed;
+        this.opacity -= this.decay;
+      }
+
+      draw(c) {
+        c.save();
+        c.translate(this.x, this.y);
+        c.rotate((this.rotation * Math.PI) / 180);
+        c.globalAlpha = Math.max(0, this.opacity);
+        c.fillStyle = this.color;
+
+        if (this.type === 'rect') {
+          c.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2);
+        } else {
+          c.beginPath();
+          c.arc(0, 0, this.radius, 0, Math.PI * 2);
+          c.fill();
+        }
+        c.restore();
+      }
+    }
+
+    function triggerConfettiBurst(originX, originY, count = 120) {
+      sound.playPop();
+      for (let i = 0; i < count; i++) {
+        particles.push(new ConfettiPiece(originX, originY));
+      }
+      if (!animationFrameId) {
+        renderConfetti();
+      }
+    }
+
+    function renderConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.update();
+        p.draw(ctx);
+        if (p.opacity <= 0 || p.y > canvas.height + 50) {
+          particles.splice(i, 1);
+        }
+      }
+
+      if (particles.length > 0) {
+        animationFrameId = requestAnimationFrame(renderConfetti);
+      } else {
+        animationFrameId = null;
+      }
+    }
+
+    /* ==========================================================
+       3. USER FLOW & INTERACTION LOGIC
+       ========================================================== */
+    const giftStage = document.getElementById('giftStage');
+    const celebrationStage = document.getElementById('celebrationStage');
+    const giftBoxTrigger = document.getElementById('giftBoxTrigger');
+    const openGiftBtn = document.getElementById('openGiftBtn');
+    const blastConfettiBtn = document.getElementById('blastConfettiBtn');
+    const playMelodyBtn = document.getElementById('playMelodyBtn');
+    const replayStageBtn = document.getElementById('replayStageBtn');
+    const bdayVideo = document.getElementById('bdayVideo');
+    const animatedTitle = document.getElementById('animatedTitle');
+
+    function setupAnimatedTitle(text) {
+      animatedTitle.innerHTML = '';
+      const letters = text.split('');
+      letters.forEach((char, index) => {
+        const span = document.createElement('span');
+        span.className = 'bounce-char';
+        span.textContent = char === ' ' ? '\u00A0' : char;
+        span.style.animation = `springPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) ${index * 0.04}s both`;
+        animatedTitle.appendChild(span);
+      });
+    }
+
+    function showToast(message, icon = '🎉') {
+      const toast = document.getElementById('customToast');
+      const toastMessage = document.getElementById('toastMessage');
+      const toastIcon = document.getElementById('toastIcon');
+      
+      toastMessage.textContent = message;
+      toastIcon.textContent = icon;
+
+      toast.classList.remove('translate-y-32', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-32', 'opacity-0');
+      }, 3000);
+    }
+
+    function revealSurprise() {
+      sound.playSpringBoing();
+
+      const rect = giftBoxTrigger.getBoundingClientRect();
+      const originX = rect.left + rect.width / 2;
+      const originY = rect.top + rect.height / 2;
+
+      triggerConfettiBurst(originX, originY, 150);
+      setTimeout(() => triggerConfettiBurst(window.innerWidth * 0.25, window.innerHeight * 0.4, 80), 300);
+      setTimeout(() => triggerConfettiBurst(window.innerWidth * 0.75, window.innerHeight * 0.4, 80), 550);
+
+      giftStage.style.transform = 'scale(0.85)';
+      giftStage.style.opacity = '0';
+
+      setTimeout(() => {
+        giftStage.classList.add('hidden');
+        celebrationStage.classList.remove('hidden');
+        celebrationStage.classList.add('flex', 'spring-pop-in');
+
+        setupAnimatedTitle("Snvv Nguyễn Bảo Nam =)))");
+        sound.playFanfare();
+
+        bdayVideo.play().catch(() => {
+          console.log('Video yêu cầu người dùng nhấn play trên thanh điều khiển.');
+        });
+      }, 400);
+    }
+
+    giftBoxTrigger.addEventListener('click', revealSurprise);
+    openGiftBtn.addEventListener('click', revealSurprise);
+
+    blastConfettiBtn.addEventListener('click', () => {
+      const rect = blastConfettiBtn.getBoundingClientRect();
+      triggerConfettiBurst(rect.left + rect.width / 2, rect.top, 120);
+      showToast('Pháo hoa bùng nổ chúc mừng Nam!', '🎆');
+    });
+
+    playMelodyBtn.addEventListener('click', () => {
+      sound.playFanfare();
+      showToast('Giai điệu Happy Birthday đang ngân vang!', '🎵');
+    });
+
+    replayStageBtn.addEventListener('click', () => {
+      celebrationStage.classList.add('hidden');
+      celebrationStage.classList.remove('flex', 'spring-pop-in');
+      
+      giftStage.classList.remove('hidden');
+      giftStage.style.transform = 'scale(1)';
+      giftStage.style.opacity = '1';
+
+      bdayVideo.pause();
+      bdayVideo.currentTime = 0;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
